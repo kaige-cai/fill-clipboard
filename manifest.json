@@ -1,0 +1,34 @@
+{
+   "manifest_version": 3,
+   "name": "填充剪贴板",
+   "version": "1.0",
+   "description": "在右键菜单显示剪贴板内容",
+   "permissions": [
+      "activeTab",
+      "clipboardRead",
+      "clipboardWrite"
+   ],
+   "icons": {
+      "48": "icon.png"
+   },
+   "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+         "16": "icon.png",
+         "48": "icon.png"
+      }
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [
+      {
+         "matches": [
+            "<all_urls>"
+         ],
+         "js": [
+            "popup.js"
+         ]
+      }
+   ]
+}
